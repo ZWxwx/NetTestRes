@@ -1,0 +1,720 @@
+fileFormatVersion: 2
+guid: f932d019b0539e54f98ec20cfb3a1559
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6998070161851219809
+    second: Flandre_Defeated_0
+  - first:
+      213: 8359032322696748727
+    second: Flandre_Defeated_1
+  - first:
+      213: -5759126202124135258
+    second: Flandre_Defeated_2
+  - first:
+      213: 8736343351818294464
+    second: Flandre_Defeated_3
+  - first:
+      213: -5365194697921719511
+    second: Flandre_Defeated_4
+  - first:
+      213: 8528619464973155884
+    second: Flandre_Defeated_5
+  - first:
+      213: 5096899347988190247
+    second: Flandre_Defeated_6
+  - first:
+      213: -1380542522026258638
+    second: Flandre_Defeated_7
+  - first:
+      213: -6351656272391067102
+    second: Flandre_Defeated_8
+  - first:
+      213: -3920786084320325196
+    second: Flandre_Defeated_9
+  - first:
+      213: 7228669859453083272
+    second: Flandre_Defeated_10
+  - first:
+      213: -4392808651632354631
+    second: Flandre_Defeated_11
+  - first:
+      213: -8293237507715739219
+    second: Flandre_Defeated_12
+  - first:
+      213: 4101558545944350112
+    second: Flandre_Defeated_13
+  - first:
+      213: -3233154260249817738
+    second: Flandre_Defeated_14
+  - first:
+      213: -4980343752523621097
+    second: Flandre_Defeated_15
+  - first:
+      213: 4810919122279543605
+    second: Flandre_Defeated_16
+  - first:
+      213: 5098778723433489160
+    second: Flandre_Defeated_17
+  - first:
+      213: 3618472962717796027
+    second: Flandre_Defeated_18
+  - first:
+      213: -6074881561929951648
+    second: Flandre_Defeated_19
+  - first:
+      213: 4762880525871280789
+    second: Flandre_Defeated_20
+  - first:
+      213: 8261534266718691479
+    second: Flandre_Defeated_21
+  - first:
+      213: -1334256171821645164
+    second: Flandre_Defeated_22
+  - first:
+      213: -2481831444610768202
+    second: Flandre_Defeated_23
+  - first:
+      213: 7110630360557483571
+    second: Flandre_Defeated_24
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Flandre_Defeated_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 1886
+        width: 163
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f900991e34cd1ee90800000000000000
+      internalID: -6998070161851219809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flandre_Defeated_1
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 1911
+        width: 172
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7be19540c9f310470800000000000000
+      internalID: 8359032322696748727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flandre_Defeated_2
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 1894
+        width: 169
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a41fb97b397310b0800000000000000
+      internalID: -5759126202124135258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flandre_Defeated_3
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 1730
+        width: 160
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c499f8cdf9bd3970800000000000000
+      internalID: 8736343351818294464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flandre_Defeated_4
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 1774
+        width: 172
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 923119729dffa85b0800000000000000
+      internalID: -5365194697921719511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flandre_Defeated_5
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 1759
+        width: 172
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2ef432873ebb5670800000000000000
+      internalID: 8528619464973155884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flandre_Defeated_6
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 1560
+        width: 177
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72491c4d3f2dbb640800000000000000
+      internalID: 5096899347988190247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flandre_Defeated_7
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 1636
+        width: 172
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23f8d4104e357dce0800000000000000
+      internalID: -1380542522026258638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flandre_Defeated_8
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 1624
+        width: 172
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22aafb4d5426ad7a0800000000000000
+      internalID: -6351656272391067102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flandre_Defeated_9
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 1619
+        width: 161
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b1dacb54d19699c0800000000000000
+      internalID: -3920786084320325196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flandre_Defeated_10
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 1391
+        width: 177
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88e164320f4615460800000000000000
+      internalID: 7228669859453083272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flandre_Defeated_11
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 1497
+        width: 172
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bad0313ecb9903c0800000000000000
+      internalID: -4392808651632354631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flandre_Defeated_12
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 1489
+        width: 172
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da158aa1d6088ec80800000000000000
+      internalID: -8293237507715739219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flandre_Defeated_13
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 1484
+        width: 165
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ad0b7c34c9abe830800000000000000
+      internalID: 4101558545944350112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flandre_Defeated_14
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 1363
+        width: 172
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67dc4cd84578123d0800000000000000
+      internalID: -3233154260249817738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flandre_Defeated_15
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 1354
+        width: 172
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71d5e7b7eb342eab0800000000000000
+      internalID: -4980343752523621097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flandre_Defeated_16
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 1351
+        width: 172
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5333b9ec371d3c240800000000000000
+      internalID: 4810919122279543605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flandre_Defeated_17
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 1220
+        width: 180
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 803a2960c3082c640800000000000000
+      internalID: 5098778723433489160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flandre_Defeated_18
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 1219
+        width: 172
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb64624fcf5673230800000000000000
+      internalID: 3618472962717796027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flandre_Defeated_19
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 1218
+        width: 172
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0665890d76fa1bba0800000000000000
+      internalID: -6074881561929951648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flandre_Defeated_20
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 1217
+        width: 172
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 592fe2c7a96291240800000000000000
+      internalID: 4762880525871280789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flandre_Defeated_21
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 1050
+        width: 180
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7902c73e4add6a270800000000000000
+      internalID: 8261534266718691479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flandre_Defeated_22
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 1049
+        width: 178
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 492c237b415cb7de0800000000000000
+      internalID: -1334256171821645164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flandre_Defeated_23
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 1049
+        width: 177
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b2a49f4373ce8dd0800000000000000
+      internalID: -2481831444610768202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flandre_Defeated_24
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 1050
+        width: 177
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 336f222a3a80ea260800000000000000
+      internalID: 7110630360557483571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

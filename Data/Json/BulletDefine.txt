@@ -1,0 +1,26 @@
+{
+  "101": {
+    "ID": 101,
+    "Name": "冰锥",
+    "SpriteId": 0,
+    "Type": "Default",
+    "Speed": 45.0,
+    "Damage": 65.0
+  },
+  "102": {
+    "ID": 102,
+    "Name": "月兔子弹",
+    "SpriteId": 1,
+    "Type": "Default",
+    "Speed": 35.0,
+    "Damage": 36.0
+  },
+  "103": {
+    "ID": 103,
+    "Name": "防御塔子弹",
+    "SpriteId": 2,
+    "Type": "Default",
+    "Speed": 50.0,
+    "Damage": 150.0
+  }
+}

@@ -1,0 +1,696 @@
+fileFormatVersion: 2
+guid: 06440567fe263a442a080ad72efbfe82
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 200380540325078118
+    second: Reisen_Attack_0
+  - first:
+      213: 8235385364956744937
+    second: Reisen_Attack_1
+  - first:
+      213: -3620442638777052713
+    second: Reisen_Attack_2
+  - first:
+      213: 2784021349075602974
+    second: Reisen_Attack_3
+  - first:
+      213: 2982938887407645821
+    second: Reisen_Attack_4
+  - first:
+      213: 4811661461285594005
+    second: Reisen_Attack_5
+  - first:
+      213: -3095357918334478405
+    second: Reisen_Attack_6
+  - first:
+      213: 531341825064587885
+    second: Reisen_Attack_7
+  - first:
+      213: -628059448368701039
+    second: Reisen_Attack_8
+  - first:
+      213: -9070297638143342195
+    second: Reisen_Attack_9
+  - first:
+      213: -2937013935212742786
+    second: Reisen_Attack_10
+  - first:
+      213: -8581595939125082267
+    second: Reisen_Attack_11
+  - first:
+      213: 7895484472924857262
+    second: Reisen_Attack_12
+  - first:
+      213: -1836203096266519841
+    second: Reisen_Attack_13
+  - first:
+      213: 4671517471850234032
+    second: Reisen_Attack_14
+  - first:
+      213: 3275821901249852854
+    second: Reisen_Attack_15
+  - first:
+      213: -6121179401287715629
+    second: Reisen_Attack_16
+  - first:
+      213: -2289174043207337937
+    second: Reisen_Attack_17
+  - first:
+      213: -9212419281718007905
+    second: Reisen_Attack_18
+  - first:
+      213: 26015505963657362
+    second: Reisen_Attack_19
+  - first:
+      213: 6425218917593980867
+    second: Reisen_Attack_20
+  - first:
+      213: -7613741349072892922
+    second: Reisen_Attack_21
+  - first:
+      213: -4247288035800278009
+    second: Reisen_Attack_22
+  - first:
+      213: -8092195215420491887
+    second: Reisen_Attack_23
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Reisen_Attack_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 456
+        width: 121
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6642afd2a05e7c200800000000000000
+      internalID: 200380540325078118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reisen_Attack_1
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 456
+        width: 118
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ec82b24b57f94270800000000000000
+      internalID: 8235385364956744937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reisen_Attack_2
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 456
+        width: 116
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d1140a1a9a91cdc0800000000000000
+      internalID: -3620442638777052713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reisen_Attack_3
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 446
+        width: 97
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1e41c6aaa4d2a620800000000000000
+      internalID: 2784021349075602974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reisen_Attack_4
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 440
+        width: 97
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d74b1a22d17856920800000000000000
+      internalID: 2982938887407645821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reisen_Attack_5
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 417
+        width: 94
+        height: 133
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5936d531b9476c240800000000000000
+      internalID: 4811661461285594005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reisen_Attack_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 304
+        width: 122
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb71bf88f541b05d0800000000000000
+      internalID: -3095357918334478405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reisen_Attack_7
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 304
+        width: 118
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6258412394bf5700800000000000000
+      internalID: 531341825064587885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reisen_Attack_8
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 302
+        width: 106
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 191e722624fa847f0800000000000000
+      internalID: -628059448368701039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reisen_Attack_9
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 294
+        width: 97
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d89c667ca54df1280800000000000000
+      internalID: -9070297638143342195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reisen_Attack_10
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 298
+        width: 98
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e77b54b0361ad37d0800000000000000
+      internalID: -2937013935212742786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reisen_Attack_11
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 282
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 567c38ae5fb08e880800000000000000
+      internalID: -8581595939125082267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reisen_Attack_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 153
+        width: 123
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea36c4acb45629d60800000000000000
+      internalID: 7895484472924857262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reisen_Attack_13
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 153
+        width: 114
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdacf87330f7486e0800000000000000
+      internalID: -1836203096266519841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reisen_Attack_14
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 150
+        width: 103
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b00aafc36094d040800000000000000
+      internalID: 4671517471850234032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reisen_Attack_15
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 150
+        width: 103
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b53173c9ae067d20800000000000000
+      internalID: 3275821901249852854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reisen_Attack_16
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 148
+        width: 98
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d4bec314c33d0ba0800000000000000
+      internalID: -6121179401287715629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reisen_Attack_17
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 144
+        width: 97
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f28f49516583b30e0800000000000000
+      internalID: -2289174043207337937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reisen_Attack_18
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 124
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f972d370979e62080800000000000000
+      internalID: -9212419281718007905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reisen_Attack_19
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 2
+        width: 113
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 298ad9ff6fc6c5000800000000000000
+      internalID: 26015505963657362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reisen_Attack_20
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 2
+        width: 110
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cf1f433096fa2950800000000000000
+      internalID: 6425218917593980867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reisen_Attack_21
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 2
+        width: 99
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60c8ec4159e865690800000000000000
+      internalID: -7613741349072892922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reisen_Attack_22
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 2
+        width: 99
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70c9b57d80a9e05c0800000000000000
+      internalID: -4247288035800278009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reisen_Attack_23
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 2
+        width: 96
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 197febb635fb2bf80800000000000000
+      internalID: -8092195215420491887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

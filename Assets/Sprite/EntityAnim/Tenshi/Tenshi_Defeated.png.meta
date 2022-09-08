@@ -1,0 +1,768 @@
+fileFormatVersion: 2
+guid: 9bc39692874a7524d8871648271be71f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9077046025248725003
+    second: Tenshi_Defeated_0
+  - first:
+      213: 2307909672005384612
+    second: Tenshi_Defeated_1
+  - first:
+      213: 4908594160522896310
+    second: Tenshi_Defeated_2
+  - first:
+      213: 1275840439196754169
+    second: Tenshi_Defeated_3
+  - first:
+      213: -7128523081746935301
+    second: Tenshi_Defeated_4
+  - first:
+      213: 3666174800632106548
+    second: Tenshi_Defeated_5
+  - first:
+      213: -4470102789705572662
+    second: Tenshi_Defeated_6
+  - first:
+      213: -8306460811525001365
+    second: Tenshi_Defeated_7
+  - first:
+      213: 7839844408418166118
+    second: Tenshi_Defeated_8
+  - first:
+      213: -7447104670619717752
+    second: Tenshi_Defeated_9
+  - first:
+      213: 1550733592081500539
+    second: Tenshi_Defeated_10
+  - first:
+      213: -6652570128987556076
+    second: Tenshi_Defeated_11
+  - first:
+      213: 1288035913211656992
+    second: Tenshi_Defeated_12
+  - first:
+      213: -6978068418089259465
+    second: Tenshi_Defeated_13
+  - first:
+      213: -3135710045384578618
+    second: Tenshi_Defeated_14
+  - first:
+      213: -5344033435358526221
+    second: Tenshi_Defeated_15
+  - first:
+      213: 106374007900262390
+    second: Tenshi_Defeated_16
+  - first:
+      213: -8015786605879885459
+    second: Tenshi_Defeated_17
+  - first:
+      213: 2463505599052391829
+    second: Tenshi_Defeated_18
+  - first:
+      213: 6761562485920810769
+    second: Tenshi_Defeated_19
+  - first:
+      213: 2301099257789080348
+    second: Tenshi_Defeated_20
+  - first:
+      213: 368509418295428120
+    second: Tenshi_Defeated_21
+  - first:
+      213: -5669788496386739683
+    second: Tenshi_Defeated_22
+  - first:
+      213: 7186115962084298373
+    second: Tenshi_Defeated_23
+  - first:
+      213: 6647912869463271330
+    second: Tenshi_Defeated_24
+  - first:
+      213: -3769524857443626446
+    second: Tenshi_Defeated_25
+  - first:
+      213: 4164724018049172343
+    second: Tenshi_Defeated_26
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tenshi_Defeated_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 963
+        width: 170
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f7ad277bbad70280800000000000000
+      internalID: -9077046025248725003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Defeated_1
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 966
+        width: 168
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a9b19d6e97570020800000000000000
+      internalID: 2307909672005384612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Defeated_2
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 966
+        width: 135
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b32684d164de1440800000000000000
+      internalID: 4908594160522896310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Defeated_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 804
+        width: 127
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f0a668ae12b4b110800000000000000
+      internalID: 1275840439196754169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Defeated_4
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 839
+        width: 171
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf11d439606621d90800000000000000
+      internalID: -7128523081746935301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Defeated_5
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 839
+        width: 176
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43e4a249e8ed0e230800000000000000
+      internalID: 3666174800632106548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Defeated_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 671
+        width: 129
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acedd16423107f1c0800000000000000
+      internalID: -4470102789705572662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Defeated_7
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 724
+        width: 167
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6f6954c6e589bc80800000000000000
+      internalID: -8306460811525001365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Defeated_8
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 724
+        width: 172
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 665e812c3f8bccc60800000000000000
+      internalID: 7839844408418166118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Defeated_9
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 540
+        width: 139
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88f2f8e22c196a890800000000000000
+      internalID: -7447104670619717752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Defeated_10
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 568
+        width: 144
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7988416cff458510800000000000000
+      internalID: 1550733592081500539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Defeated_11
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 612
+        width: 171
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 417725ae6b25da3a0800000000000000
+      internalID: -6652570128987556076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Defeated_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 431
+        width: 166
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02b3de8b6d500e110800000000000000
+      internalID: 1288035913211656992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Defeated_13
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 438
+        width: 131
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73eea61cebbe82f90800000000000000
+      internalID: -6978068418089259465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Defeated_14
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 502
+        width: 169
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c96a32d358bb74d0800000000000000
+      internalID: -3135710045384578618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Defeated_15
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 322
+        width: 166
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f405a987ed26d5b0800000000000000
+      internalID: -5344033435358526221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Defeated_16
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 329
+        width: 166
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ffca3ab89ae97100800000000000000
+      internalID: 106374007900262390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Defeated_17
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 375
+        width: 133
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6102392d8432c090800000000000000
+      internalID: -8015786605879885459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Defeated_18
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 213
+        width: 166
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59524b54a41203220800000000000000
+      internalID: 2463505599052391829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Defeated_19
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 220
+        width: 166
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 117cae3b145e5dd50800000000000000
+      internalID: 6761562485920810769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Defeated_20
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 250
+        width: 146
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c13ee6d45952fef10800000000000000
+      internalID: 2301099257789080348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Defeated_21
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 104
+        width: 166
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81482ed0d553d1500800000000000000
+      internalID: 368509418295428120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Defeated_22
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 111
+        width: 170
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d12b541076dd051b0800000000000000
+      internalID: -5669788496386739683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Defeated_23
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 126
+        width: 145
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58e8cc2d4663ab360800000000000000
+      internalID: 7186115962084298373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Defeated_24
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 168
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a72b1a5881224c50800000000000000
+      internalID: 6647912869463271330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Defeated_25
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 2
+        width: 173
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 232511c2d15ffabc0800000000000000
+      internalID: -3769524857443626446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Defeated_26
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 2
+        width: 133
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 773cb53cd621cc930800000000000000
+      internalID: 4164724018049172343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

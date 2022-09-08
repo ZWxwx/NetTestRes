@@ -1,0 +1,672 @@
+fileFormatVersion: 2
+guid: 32c0ee4774d3b084f970ea2acbf35685
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1356969731562942129
+    second: Tenshi_Attack_0
+  - first:
+      213: -2963157226284388206
+    second: Tenshi_Attack_1
+  - first:
+      213: -3218036136956255833
+    second: Tenshi_Attack_2
+  - first:
+      213: -4998460229590404538
+    second: Tenshi_Attack_3
+  - first:
+      213: -2454515202442712742
+    second: Tenshi_Attack_4
+  - first:
+      213: 8813184149199734209
+    second: Tenshi_Attack_5
+  - first:
+      213: -4017499174821579892
+    second: Tenshi_Attack_6
+  - first:
+      213: 3806305107185446700
+    second: Tenshi_Attack_7
+  - first:
+      213: 4143048401794967040
+    second: Tenshi_Attack_8
+  - first:
+      213: 7413786065632757406
+    second: Tenshi_Attack_9
+  - first:
+      213: -6862523130863637462
+    second: Tenshi_Attack_10
+  - first:
+      213: -9091547242318826169
+    second: Tenshi_Attack_11
+  - first:
+      213: -2700650690382989981
+    second: Tenshi_Attack_12
+  - first:
+      213: -1518456541751987033
+    second: Tenshi_Attack_13
+  - first:
+      213: 2390357722825657738
+    second: Tenshi_Attack_14
+  - first:
+      213: -4769808043097954627
+    second: Tenshi_Attack_15
+  - first:
+      213: 3804244362148350717
+    second: Tenshi_Attack_16
+  - first:
+      213: -7888912226900255857
+    second: Tenshi_Attack_17
+  - first:
+      213: -6651908151002567464
+    second: Tenshi_Attack_18
+  - first:
+      213: 6004983745809911358
+    second: Tenshi_Attack_19
+  - first:
+      213: -4820336248523016391
+    second: Tenshi_Attack_20
+  - first:
+      213: 1833115400876854549
+    second: Tenshi_Attack_21
+  - first:
+      213: -8740828140672444255
+    second: Tenshi_Attack_22
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tenshi_Attack_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 377
+        width: 129
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f41db3bf7331b2de0800000000000000
+      internalID: -1356969731562942129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Attack_1
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 380
+        width: 124
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 290ffa1c330c0e6d0800000000000000
+      internalID: -2963157226284388206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Attack_2
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 398
+        width: 156
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a12a5eee2d3753d0800000000000000
+      internalID: -3218036136956255833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Attack_3
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 414
+        width: 187
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 642b85777e6e1aab0800000000000000
+      internalID: -4998460229590404538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Attack_4
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 429
+        width: 186
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a592b9e8d6fcfedd0800000000000000
+      internalID: -2454515202442712742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Attack_5
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 246
+        width: 171
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c547291a48be4a70800000000000000
+      internalID: 8813184149199734209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Attack_6
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 249
+        width: 128
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c83b55f39c9fe38c0800000000000000
+      internalID: -4017499174821579892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Attack_7
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 249
+        width: 111
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2f2b8c0456b2d430800000000000000
+      internalID: 3806305107185446700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Attack_8
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 282
+        width: 134
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0062d3412901f7930800000000000000
+      internalID: 4143048401794967040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Attack_9
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 255
+        width: 99
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9608c2952f03e660800000000000000
+      internalID: 7413786065632757406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Attack_10
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 255
+        width: 129
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2ca8f9529b63c0a0800000000000000
+      internalID: -6862523130863637462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Attack_11
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 255
+        width: 113
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74577e2c3f554d180800000000000000
+      internalID: -9091547242318826169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Attack_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 121
+        width: 181
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 365fe49718c558ad0800000000000000
+      internalID: -2700650690382989981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Attack_13
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 122
+        width: 129
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a4310602db5deae0800000000000000
+      internalID: -1518456541751987033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Attack_14
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 122
+        width: 180
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8d822b2fa14c2120800000000000000
+      internalID: 2390357722825657738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Attack_15
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 126
+        width: 129
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db668583bdc3ecdb0800000000000000
+      internalID: -4769808043097954627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Attack_16
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 127
+        width: 179
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfa82a477146bc430800000000000000
+      internalID: 3804244362148350717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Attack_17
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 135
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8bdf5b7024f48290800000000000000
+      internalID: -7888912226900255857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Attack_18
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 2
+        width: 135
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dc67fca7ccafa3a0800000000000000
+      internalID: -6651908151002567464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Attack_19
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 2
+        width: 135
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3e8efaa6ecf55350800000000000000
+      internalID: 6004983745809911358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Attack_20
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 2
+        width: 135
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 937b8d0a8b9ba1db0800000000000000
+      internalID: -4820336248523016391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Attack_21
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 2
+        width: 184
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51d009daeb8807910800000000000000
+      internalID: 1833115400876854549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tenshi_Attack_22
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 2
+        width: 132
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a81b70fd1752b680800000000000000
+      internalID: -8740828140672444255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
