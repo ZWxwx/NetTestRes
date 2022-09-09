@@ -133,8 +133,9 @@ public class AIEntityController : EntityController
 	}
 
 
-	public override void WhileUpdate()
+	public void Update()
 	{
+		base.Update();
 		if (currentTarget != null) {
 			
 			if (isTargetNearby) {

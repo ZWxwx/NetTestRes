@@ -10,6 +10,11 @@ public class MessageManager : MonoSingleton<MessageManager>
     public int maxMessage;
     public List<MessageDefine> messages=new List<MessageDefine>();
 
+	public void AddLocalMessage(int messageTypeId, string sender, string content)
+	{
+		ReceiveNewMessage(messageTypeId,sender,content);
+	}
+
 
 	[PunRPC]
     public void ReceiveNewMessage(int messageTypeId,string sender,string content)

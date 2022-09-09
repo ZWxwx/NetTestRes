@@ -6,7 +6,8 @@ public enum MessageType
 {
     None=0,
     System=1,
-    Talk=2
+    Talk=2,
+    Battle=3
 }
 public class MessageDefine
 {

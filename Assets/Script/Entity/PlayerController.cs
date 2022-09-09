@@ -56,18 +56,22 @@ public class PlayerController : EntityController
 	}
 
 
-	public override void WhileUpdate()
+	public void Update()
     {
+        base.Update();
         #region Moving Control
 
         if (!photonView.IsMine && PhotonNetwork.IsConnected)
         {
             return;
         }
-
+#if UNITY_STANDALONE_WIN
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-
+#endif
+#if UNITY_ANDROID
+        //安卓端移动方式
+#endif 
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Cirno_Move"))
         {
             rb.velocity = new Vector2(horizontal, vertical) * speed;
@@ -103,9 +107,9 @@ public class PlayerController : EntityController
         //    attack();
         //}
 
-        #endregion
+#endregion
 
-        #region Target Control
+#region Target Control
 
 		if (Input.GetButtonDown("Fire1")&&iAttackDuring==0)
 		{
@@ -155,13 +159,13 @@ public class PlayerController : EntityController
         }
         
 
-        #endregion
+#endregion
 
-        #region Other
+#region Other
 
 
 
-        #endregion
+#endregion
     }
 
     public void Respawn()
@@ -169,6 +173,6 @@ public class PlayerController : EntityController
         
     }
 
-	#endregion
+#endregion
 
 }

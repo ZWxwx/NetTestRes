@@ -42,7 +42,25 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void InitPlayer()
 	{
-        GameObject player = PhotonNetwork.Instantiate("Player", new Vector3(1, 1, 0), Quaternion.identity, 0);
+        GameObject player=null;
+
+        if (selectedTeam == Team.Red)
+		{
+            
+            player = PhotonNetwork.Instantiate("Player", new Vector2(
+                Random.Range(SpawnManager.Instance.redSpawner.upLeftPoint.x, SpawnManager.Instance.redSpawner.downRightPoint.x)
+                , Random.Range(SpawnManager.Instance.redSpawner.upLeftPoint.y, SpawnManager.Instance.redSpawner.downRightPoint.y)), Quaternion.identity, 0);
+        }
+        else if(selectedTeam == Team.Blue)
+		{
+            player = PhotonNetwork.Instantiate("Player", new Vector2(
+                Random.Range(SpawnManager.Instance.blueSpawner.upLeftPoint.x, SpawnManager.Instance.blueSpawner.downRightPoint.x)
+                , Random.Range(SpawnManager.Instance.blueSpawner.upLeftPoint.y, SpawnManager.Instance.blueSpawner.downRightPoint.y)), Quaternion.identity, 0);
+        }
+		else
+		{
+            return;
+		}
         player.GetComponent<EntityController>().entityInfo.teamId = (int)selectedTeam;
         currentCharacter = player;
         respawnButton.GetComponent<Button>().interactable = false;

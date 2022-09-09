@@ -20,7 +20,7 @@
     "Type": "远程",
     "Speed": 0.9,
     "MaxHealth": 110.0,
-    "Attack": 40.0,
+    "Attack": 300.0,
     "AttackRange": 8.0,
     "ViewRange": 9.0,
     "AttackPosition": 8040,

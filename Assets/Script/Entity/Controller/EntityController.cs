@@ -57,10 +57,8 @@ public abstract class EntityController : MonoBehaviourPunCallbacks
 		{
 			animator.SetTrigger(currentStatus.ToString());
 		}
-		WhileUpdate();
+		transform.position = new Vector3(transform.position.x, transform.position.y, 100+ transform.position.y);
 	}
-
-	public abstract void WhileUpdate();
 	#endregion
 
 	#region Other
