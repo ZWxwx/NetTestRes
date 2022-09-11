@@ -3,66 +3,84 @@ using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class DataManager : MonoBehaviour
+using UnityEngine.UI;
+using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
+using Photon.Pun;
+public class DataManager : MonoSingleton<DataManager>
 {
-    private static DataManager _Instance;
-    public static DataManager Instance
-	{
-		get
-		{
-			if (_Instance == null)
-			{
-           
-                _Instance=FindObjectOfType<DataManager>();
-			}
-            return _Instance;
-		}
-	}
+	string path = Application.streamingAssetsPath;
+    string json = null;
+
+
 
     public Dictionary<int, BulletDefine> Bullets = null;
     public Dictionary<int, EntityDefine> Entities = null;
     public List<RuntimeAnimatorController> Animator = null;
     public List<Sprite> BulletSprite = null;
     public List<Sprite> EntityImage = null;
-    public DataManager()
+	protected override void OnStart()
     {
-        Load();
+        base.OnStart();
+        LoadFileBytes();
     }
 
     public void Load()
     {
-        string json = null;
 
-        json = File.ReadAllText(Application.streamingAssetsPath+ "/Data/BulletDefine.txt");
+
+		json = File.ReadAllText(path+ "/Data/BulletDefine.txt");
         this.Bullets = JsonConvert.DeserializeObject<Dictionary<int, BulletDefine>>(json);
+        
 
-
-        json = File.ReadAllText(Application.streamingAssetsPath + "/Data/EntityDefine.txt");
+        json = File.ReadAllText(path + "/Data/EntityDefine.txt");
         this.Entities= JsonConvert.DeserializeObject<Dictionary<int, EntityDefine>>(json);
+        
     }
 
-        //public IEnumerator LoadData()
-        //{
-        //    string json = File.ReadAllText(this.DataPath + "MapDefine.txt");
-        //    this.Maps = JsonConvert.DeserializeObject<Dictionary<int, MapDefine>>(json);
 
-        //    yield return null;
+    private void LoadFileBytes()
+    {
+        string bundlePath;
+        bundlePath = Path.Combine(Application.streamingAssetsPath, "Data/EntityDefine.txt");
+        UILoadingMessage.Instance.message.text = "加载资源:" + bundlePath;
+        StartCoroutine(GetFileBytes(bundlePath,1));
+        bundlePath = Path.Combine(Application.streamingAssetsPath, "Data/BulletDefine.txt");
+        UILoadingMessage.Instance.message.text = "加载资源:" + bundlePath;
+        StartCoroutine(GetFileBytes(bundlePath,2));
+        JumpToNextScene();
+    }
 
-        //    json = File.ReadAllText(this.DataPath + "CharacterDefine.txt");
-        //    this.Characters = JsonConvert.DeserializeObject<Dictionary<int, CharacterDefine>>(json);
+    IEnumerator GetFileBytes(string path,int id)
+    {
+        var request = UnityWebRequest.Get(new System.Uri(path));
+        yield return request.SendWebRequest();
+        if (request.isNetworkError || request.isHttpError)
+        {
+            Debug.Log(request.error);
+            yield break;
+        }
+        json = request.downloadHandler.text;
 
-        //    yield return null;
+        // 根据需求选择返回结果
+        switch (id)
+		{
+            case 1:
+                
+                this.Entities = JsonConvert.DeserializeObject<Dictionary<int, EntityDefine>>(json);
+                break;
+            case 2:
+                this.Bullets = JsonConvert.DeserializeObject<Dictionary<int, BulletDefine>>(json);
+                break;
+            default:
+				break;
+		}
 
-        //    json = File.ReadAllText(this.DataPath + "TeleporterDefine.txt");
-        //    this.Teleporters = JsonConvert.DeserializeObject<Dictionary<int, TeleporterDefine>>(json);
+    }
 
-        //    yield return null;
+    void JumpToNextScene()
+	{
+        PhotonNetwork.LoadLevel(2);
+	}
 
-        //    json = File.ReadAllText(this.DataPath + "SpawnPointDefine.txt");
-        //    this.SpawnPoints = JsonConvert.DeserializeObject<Dictionary<int, Dictionary<int, SpawnPointDefine>>>(json);
-
-        //    yield return null;
-        //}
-   
 }

@@ -84,4 +84,13 @@ public class SpawnManager : MonoSingleton<SpawnManager>
         }
 
     }
+
+    public void spawnOne(UIRetinueSpawn urs,Team team)
+	{
+        (team == Team.Blue ? blueSpawner : redSpawner).spawnEntity(urs.entityID);
+        PlayerManager.Instance.currentPlayer.money -= DataManager.Instance.Entities[urs.entityID].Price;
+        EntityDefine ed;
+        DataManager.Instance.Entities.TryGetValue(urs.entityID, out ed);
+        MessageManager.Instance.AddLocalMessage((int)MessageType.Battle, "Battle", string.Format("{0}用{1}P点部署了{2}", GameManager.Instance.currentCharacter.GetComponent<PhotonView>().Owner.NickName, ed.Price.ToString(), ed.Name));
+    }
 }

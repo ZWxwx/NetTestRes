@@ -12,18 +12,19 @@ public class PlayerController : EntityController
     public Text nameUI;
     public GameObject bullet;
     public int money=100;
-    
-
-    #endregion
-
-    #region IPunObservable Implements
 
 
-    #endregion
+	#endregion
 
-    #region Public Methods
+	#region IPunObservable Implements
 
-    public override void Start()
+
+	#endregion
+
+	#region Public Methods
+	#endregion
+
+	public override void Start()
     {
         base.Start();
         GameManager.Instance.onPlayerJoined(this);
@@ -33,9 +34,14 @@ public class PlayerController : EntityController
             nameUI.text = PhotonNetwork.NickName;
         else
             nameUI.text = photonView.Owner.NickName;
+#if UNITY_ANDROID
+        AndriodInputManager.Instance.attackButton.onClick.AddListener(shotOneBulletToNearestTarget);
+
+#endif
     }
     public IEnumerator shotOneBullet(Transform target,float time)
 	{
+        iAttackDuring = DataManager.Instance.Entities[entityInfo.entityDataId].AttackDuring;
         currentStatus = AIEntityStatus.Attack1;
         yield return new WaitForSeconds(time);
 		if (target == null)
@@ -53,10 +59,52 @@ public class PlayerController : EntityController
 
 		Debug.LogFormat("{0} {1}", Mathf.Atan2(mPosition.y - transform.position.y, mPosition.x - transform.position.x), Mathf.Atan2(mPosition.y - transform.position.y, mPosition.x - transform.position.x) * 180f / Mathf.PI);
 		currentStatus = AIEntityStatus.Idle;
-	}
+        
+    }
+
+/// <summary>
+/// 暂时用于android
+/// </summary>
+    public void shotOneBulletToNearestTarget()
+    {
+		if (iAttackDuring > 0)
+		{
+            return;
+		}
+        nearbyCollider = Physics2D.OverlapCircleAll(transform.position,DataManager.Instance.Entities[entityInfo.entityDataId].AttackRange);
+        float minDistance=65535f;
+        EntityController minDistanceEC=null;
+        foreach(var col in nearbyCollider)
+		{
+            if (col.tag == "Entity")
+            {
+                if (col.GetComponent<AIEntityController>() == null)
+                {
+                    currentTarget = col.GetComponent<PlayerController>();
+                }
+                else
+                {
+                    currentTarget = col.GetComponent<AIEntityController>();
+                }
+				if (currentTarget.Equals(this)||currentTarget.entityInfo.teamId==entityInfo.teamId)
+				{
+                    continue;
+				}
+                if((currentTarget.transform.position - transform.position).magnitude < minDistance)
+				{
+                    minDistance = (currentTarget.transform.position - transform.position).magnitude;
+                    minDistanceEC = currentTarget;
+				}
+            }
+        }
+		if (minDistanceEC != null)
+		{
+            StartCoroutine(shotOneBullet(minDistanceEC.transform, 0.5f));
+		}
+    }
 
 
-	public void Update()
+    public void Update()
     {
         base.Update();
         #region Moving Control
@@ -65,12 +113,15 @@ public class PlayerController : EntityController
         {
             return;
         }
+
 #if UNITY_STANDALONE_WIN
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 #endif
 #if UNITY_ANDROID
         //安卓端移动方式
+        float horizontal = AndriodInputManager.Instance.moveStick.Horizontal;
+        float vertical = AndriodInputManager.Instance.moveStick.Vertical;
 #endif 
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Cirno_Move"))
         {
@@ -80,10 +131,8 @@ public class PlayerController : EntityController
 		{
             rb.velocity = new Vector2(0f, 0f);
         }
-        //transform.Translate(horizontal * speed * Time.deltaTime,
-        //    vertical * speed * Time.deltaTime,0);
-
-        if (transform.localScale.x < 0 && horizontal > 0)
+        #region 转向
+		if (transform.localScale.x < 0 && horizontal > 0)
         {
             transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z); 
         }
@@ -92,7 +141,9 @@ public class PlayerController : EntityController
         {
             transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
         }
-        if (horizontal != 0 || vertical != 0)
+		#endregion
+        #region 由是否移动决定状态
+		if (horizontal != 0 || vertical != 0)
         {
             currentStatus = AIEntityStatus.Move;
         }
@@ -102,22 +153,18 @@ public class PlayerController : EntityController
             currentStatus = AIEntityStatus.Idle;
 
         }
-        //if (Input.GetButtonDown("Fire1"))
-        //{
-        //    attack();
-        //}
 
-#endregion
+		#endregion
 
-#region Target Control
+		#region Target Control
 
+#if UNITY_UNITY_STANDALONE_WIN
 		if (Input.GetButtonDown("Fire1")&&iAttackDuring==0)
 		{
             Collider2D targetCol=null;
 			nearbyCollider = Physics2D.OverlapPointAll(Camera.main.ScreenToWorldPoint(Input.mousePosition));
 			foreach (var item in nearbyCollider)
 			{
-                Debug.Log(item.gameObject.name);
 				if (item.tag=="Entity")
 				{
 					if (item.GetComponent<AIEntityController>() == null)
@@ -132,33 +179,29 @@ public class PlayerController : EntityController
                     break;
 				}
 			}
+
 			if (targetCol != null)
 			{
                 Debug.Log(targetCol.gameObject.name);
-                if((targetCol.transform.position - transform.position).magnitude < 6f)
+                if ((targetCol.transform.position - transform.position).magnitude < DataManager.Instance.Entities[entityInfo.entityDataId].AttackRange)
 				{
-					Debug.LogFormat("发射了角度为{0}的子弹", Mathf.Atan2(targetCol.transform.position.y - transform.position.y, targetCol.transform.position.x - transform.position.x) * 180f / Mathf.PI);
 					StartCoroutine(shotOneBullet(targetCol.transform,0.5f));
-                    iAttackDuring = DataManager.Instance.Entities[entityInfo.entityDataId].AttackDuring;
-
                 }
-                Debug.Log("距离："+ targetCol.transform.position + "-"+ transform.position + "="+ (targetCol.transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition)).magnitude );
-
             }
-            
 		}
+#endif
 
+#endregion
+
+		#region 运转供给冷却
 		if (iAttackDuring - Time.deltaTime > 0)
-		{
+        {
             iAttackDuring -= Time.deltaTime;
-		}
-		else
-		{
-            iAttackDuring = 0;
-
         }
-        
-
+        else
+        {
+            iAttackDuring = 0;
+        }
 #endregion
 
 #region Other

@@ -21,8 +21,9 @@ public class UIKilledMoney : MonoBehaviour
 		{
             i += Time.deltaTime;
             Color color = GetComponent<SpriteRenderer>().color;
+            Color textColor = GetComponentInChildren<Text>().color;
             GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b,(timeOfEndDisappear-i) / (timeOfEndDisappear - timeOfStartDisappear));
-            GetComponentInChildren<Text>().color = new Color(color.r, color.g, color.b,(timeOfEndDisappear-i) / (timeOfEndDisappear - timeOfStartDisappear));
+            GetComponentInChildren<Text>().color = new Color(textColor.r, textColor.g, textColor.b,(timeOfEndDisappear-i) / (timeOfEndDisappear - timeOfStartDisappear));
             yield return null;
 		}
         Destroy(gameObject);

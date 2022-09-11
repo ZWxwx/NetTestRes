@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
+    public Canvas mainCanvas;
+    public GameObject uiTextPrefab;
+
     Collider2D mouseHitCollider;
     public Texture2D normalCursor;
     public Texture2D entityCursor;
@@ -29,4 +32,22 @@ public class UIManager : MonoBehaviour
             Cursor.SetCursor(normalCursor, new Vector2(4f, 4f), CursorMode.Auto);
         }
     }
+
+    public void showText(string content)
+	{
+        var text = Instantiate(uiTextPrefab, mainCanvas.transform);
+        text.GetComponent<UIText>().text.text = content;
+	}
+
+    public void closeUI(GameObject uiObj,bool cache=false)
+	{
+		if (cache)
+		{
+            uiObj.SetActive(false);
+        }
+		else
+		{
+            Destroy(uiObj);
+		}
+	}
 }
