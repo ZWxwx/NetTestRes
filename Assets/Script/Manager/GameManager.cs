@@ -19,12 +19,21 @@ public class GameManager : MonoSingleton<GameManager>
     [Header("¹Ø¿¨ÏµÍ³")]
     public AIEntityController redTower;
     public AIEntityController blueTower;
-    public void readyToPlay()
+
+	private void Start()
 	{
+        foreach (var item in GameManager.Instance.teamButtons)
+        {
+            item.Selected = false;
+        }
+    }
+	public void readyToPlay()
+	{
+		if (selectedTeam == Team.None)
+		{
+            return;
+		}
         chosingBoard.SetActive(false);
-        //GameObject player = PhotonNetwork.Instantiate("Player", new Vector3(1, 1, 0), Quaternion.identity, 0);
-        //player.GetComponent<EntityController>().entityInfo.teamId = (int)selectedTeam;
-        //currentCharacter = player;
         InitPlayer();
     }
     
@@ -43,34 +52,19 @@ public class GameManager : MonoSingleton<GameManager>
     public void InitPlayer()
 	{
         GameObject player=null;
-
-        if (selectedTeam == Team.Red)
-		{
-            
-            player = PhotonNetwork.Instantiate("Player", new Vector2(
-                Random.Range(SpawnManager.Instance.redSpawner.upLeftPoint.x, SpawnManager.Instance.redSpawner.downRightPoint.x)
-                , Random.Range(SpawnManager.Instance.redSpawner.upLeftPoint.y, SpawnManager.Instance.redSpawner.downRightPoint.y)), Quaternion.identity, 0);
-        }
-        else if(selectedTeam == Team.Blue)
-		{
-            player = PhotonNetwork.Instantiate("Player", new Vector2(
-                Random.Range(SpawnManager.Instance.blueSpawner.upLeftPoint.x, SpawnManager.Instance.blueSpawner.downRightPoint.x)
-                , Random.Range(SpawnManager.Instance.blueSpawner.upLeftPoint.y, SpawnManager.Instance.blueSpawner.downRightPoint.y)), Quaternion.identity, 0);
-        }
-		else
+        EntitySpawner esp=selectedTeam==Team.Red?SpawnManager.Instance.redSpawner: SpawnManager.Instance.blueSpawner;
+		if (esp == null)
 		{
             return;
 		}
-        player.GetComponent<EntityController>().entityInfo.teamId = (int)selectedTeam;
+            player = PhotonNetwork.Instantiate("Player", new Vector2(
+                Random.Range(esp.upLeftPoint.x, esp.downRightPoint.x)
+                , Random.Range(esp.upLeftPoint.y, esp.downRightPoint.y)), Quaternion.identity, 0);
+        player.GetComponent<PhotonView>().RPC("ReceiveInitialData", RpcTarget.All, 102,(int)selectedTeam,DataManager.Instance.Entities[102].MaxHealth);
         currentCharacter = player;
         respawnButton.GetComponent<Button>().interactable = false;
         UIPlayerInfo.Instance.setPlayer(player.GetComponent<PlayerController>());
-        PlayerManager.Instance.players.Add(PhotonNetwork.NickName, player.GetComponent<PlayerController>());
         PlayerManager.Instance.currentPlayer = player.GetComponent<PlayerController>();
-    }
-
-    public void onPlayerJoined(PlayerController pc) {
-
     }
 
 }

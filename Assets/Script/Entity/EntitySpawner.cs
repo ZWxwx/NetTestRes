@@ -22,7 +22,7 @@ public class EntitySpawner : MonoBehaviour
 	{
 		temp = PhotonNetwork.Instantiate("Tenshi1", new Vector2(Random.Range(upLeftPoint.x, downRightPoint.x), Random.Range(upLeftPoint.y, downRightPoint.y)), Quaternion.identity);
 		temp.GetComponent<AIEntityController>().entityInfo.teamId = (int)team;
-		temp.GetComponent<PhotonView>().RPC("ReceiveInitialData", RpcTarget.All, entityID);
+		temp.GetComponent<PhotonView>().RPC("ReceiveInitialData", RpcTarget.All, entityID, (int)team, DataManager.Instance.Entities[entityID].MaxHealth);
 	}
 
 	void Update()

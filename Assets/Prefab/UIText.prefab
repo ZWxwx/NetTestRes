@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8679302637800916169
 RectTransform:
   m_ObjectHideFlags: 0
@@ -90,9 +90,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9d5d68c97788d4a8c78f3f76d092ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefab: {fileID: 8679302637800916168}
+  obj: {fileID: 0}
+  cache: 1
   text: {fileID: 8679302638458121354}
-  exitButton: {fileID: 8679302638244434890}
-  cache: 0
 --- !u!1 &8679302638244434888
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,8 +216,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8679302637800916164}
-        m_TargetAssemblyTypeName: UIText, Assembly-CSharp
-        m_MethodName: exit
+        m_TargetAssemblyTypeName: UIWindow, Assembly-CSharp
+        m_MethodName: OnCloseClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

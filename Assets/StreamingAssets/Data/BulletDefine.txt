@@ -5,7 +5,7 @@
     "SpriteId": 0,
     "Type": "Default",
     "Speed": 45.0,
-    "Damage": 65.0
+    "Damage": 100.0
   },
   "102": {
     "ID": 102,
@@ -22,5 +22,13 @@
     "Type": "Default",
     "Speed": 50.0,
     "Damage": 150.0
+  },
+  "104": {
+    "ID": 104,
+    "Name": "小防御塔子弹",
+    "SpriteId": 2,
+    "Type": "Default",
+    "Speed": 55.0,
+    "Damage": 70.0
   }
 }

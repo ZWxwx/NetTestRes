@@ -11,8 +11,7 @@ public class PlayerController : EntityController
     public float speed;
     public Text nameUI;
     public GameObject bullet;
-    public int money=100;
-
+    public PlayerBattleInfo playerBattleInfo=new PlayerBattleInfo();
 
 	#endregion
 
@@ -27,16 +26,10 @@ public class PlayerController : EntityController
 	public override void Start()
     {
         base.Start();
-        GameManager.Instance.onPlayerJoined(this);
         rb = GetComponent<Rigidbody2D>();
-        //joystick = GameObject.Find("Fixed Joystick").GetComponent<FixedJoystick>();
-        if (photonView.IsMine)
-            nameUI.text = PhotonNetwork.NickName;
-        else
-            nameUI.text = photonView.Owner.NickName;
+        nameUI.text = photonView.Owner.NickName;
 #if UNITY_ANDROID
         AndriodInputManager.Instance.attackButton.onClick.AddListener(shotOneBulletToNearestTarget);
-
 #endif
     }
     public IEnumerator shotOneBullet(Transform target,float time)

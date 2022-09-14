@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
+using Photon.Realtime;
 
-public abstract class EntityController : MonoBehaviourPunCallbacks
+public abstract class EntityController : MonoBehaviourPunCallbacks,IPunObservable
 {
 	#region Public Fields
 
@@ -31,7 +32,6 @@ public abstract class EntityController : MonoBehaviourPunCallbacks
 	public GameObject bodyPrefab;
 
 	public Action<string,float> onHit;
-	public Action onDefeated;
 	[Header("最近一次的攻击者")]
 	public string lastHitterName;
 	#endregion
@@ -41,14 +41,37 @@ public abstract class EntityController : MonoBehaviourPunCallbacks
 	public virtual void Start()
 	{
 		onHit += this.handleOnHit;
-		onDefeated += this.handleOnDefeated;
 		RefreshEntity();
 	}
 
 	[PunRPC]
-	public void ReceiveInitialData(int entityDataId)
+	public void ReceiveInitialDataByClient(int entityDataId,int teamId,float CurrentHealth, int viewId, string receiver)
+	{
+		if(PhotonNetwork.NickName!=receiver||photonView.ViewID!=viewId)
+		{
+			return;
+		}
+		this.entityInfo.entityDataId = entityDataId;
+		this.entityInfo.teamId = teamId;
+		this.entityInfo.CurrentHealth = CurrentHealth;
+	}
+
+	[PunRPC]
+	public void ReceiveInitialData(int entityDataId, int teamId, float CurrentHealth)
 	{
 		this.entityInfo.entityDataId = entityDataId;
+		this.entityInfo.teamId = teamId;
+		this.entityInfo.CurrentHealth = CurrentHealth;
+	}
+
+	public void SendInitialData(int viewId,string receiver)
+	{
+		photonView.RPC("ReceiveInitialDataByClient", RpcTarget.All ,entityInfo.entityDataId,entityInfo.teamId,entityInfo.CurrentHealth, viewId, receiver);
+	}
+
+	public override void OnPlayerEnteredRoom(Player newPlayer)
+	{
+		SendInitialData(photonView.ViewID,newPlayer.NickName);
 	}
 
 	public virtual void Update()
@@ -68,35 +91,34 @@ public abstract class EntityController : MonoBehaviourPunCallbacks
 		this.lastHitterName = hitterName;
 		this.entityInfo.CurrentHealth-=damage;
 	}
+	#region abandoned
+	//public void DestroyNextFrame()
+	//{
+	//	StartCoroutine(DestroyThis());
+	//}
 
-	public void handleOnDefeated()
-	{
-		EventManager.EntityDefeated(this,lastHitterName);
-	}
+	//public IEnumerator DestroyThis()
+	//{
+	//	yield return null;
+	//	PhotonNetwork.Destroy(this.gameObject);
+	//}
 
-	public void DestroyNextFrame()
-	{
-		StartCoroutine(DestroyThis());
-	}
+	//private void OnDestroy()
+	//{
+	//	if (!PhotonNetwork.InRoom)
+	//	{
+	//		return;
+	//	}
+	//	if (!isAI)
+	//	{
+	//		GameManager.Instance.ResetRespawnButton(photonView.Owner.NickName);
+	//	}
 
-	public IEnumerator DestroyThis()
-	{
-		yield return null;
-		PhotonNetwork.Destroy(this.gameObject);
-	}
-
-	private void OnDestroy()
-	{
-		if (!isAI)
-		{
-			GameManager.Instance.ResetRespawnButton(photonView.Owner.NickName);
-			PlayerManager.Instance.players.Remove(photonView.Owner.NickName);
-		}
-		GameObject body = PhotonNetwork.Instantiate("DefeatedBody", entityInfo.transformBeforeDefeatedPosition, Quaternion.identity);
-		body.GetComponent<PhotonView>().RPC("ReceiveInitialData", RpcTarget.All, DataManager.Instance.Entities[entityInfo.entityDataId].DefeatedAnimId);
-		body.transform.localScale= new Vector3(entityInfo.transformBeforeDefeatedForward,1,1);
-	}
-
+	//	GameObject body = PhotonNetwork.Instantiate("DefeatedBody", entityInfo.transformBeforeDefeatedPosition, Quaternion.identity);
+	//	body.GetComponent<PhotonView>().RPC("ReceiveInitialData", RpcTarget.All, DataManager.Instance.Entities[entityInfo.entityDataId].DefeatedAnimId);
+	//	body.transform.localScale= new Vector3(entityInfo.transformBeforeDefeatedForward,1,1);
+	//}
+	#endregion
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (!photonView.IsMine)
@@ -110,6 +132,7 @@ public abstract class EntityController : MonoBehaviourPunCallbacks
 			{
 				onHit(bullet.bulletInfo.ownerName, DataManager.Instance.Bullets[bullet.bulletInfo.bulletDataId].Damage);
 				bullet.bulletInfo.leftDamageTime -= 1;
+				EventManager.EntityBeHit(bullet, this);
 			}
 		}
 	}
@@ -122,9 +145,21 @@ public abstract class EntityController : MonoBehaviourPunCallbacks
 		uIEntityInfo.refreshInfo();
 	}
 
+
+
 	#endregion
 
 	#region IPunObservableImplement
-
+	public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+	{
+		if (stream.IsWriting)
+		{
+			stream.SendNext(entityInfo.CurrentHealth);
+		}
+		else
+		{
+			entityInfo.CurrentHealth = (float)stream.ReceiveNext();
+		}
+	}
 	#endregion
 }

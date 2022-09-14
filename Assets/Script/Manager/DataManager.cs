@@ -19,7 +19,8 @@ public class DataManager : MonoSingleton<DataManager>
     public List<RuntimeAnimatorController> Animator = null;
     public List<Sprite> BulletSprite = null;
     public List<Sprite> EntityImage = null;
-	protected override void OnStart()
+    public List<Sprite> EntityIdleImage = null;
+    protected override void OnStart()
     {
         base.OnStart();
         LoadFileBytes();
@@ -43,12 +44,12 @@ public class DataManager : MonoSingleton<DataManager>
     {
         string bundlePath;
         bundlePath = Path.Combine(Application.streamingAssetsPath, "Data/EntityDefine.txt");
-        UILoadingMessage.Instance.message.text = "加载资源:" + bundlePath;
+        //UILoadingMessage.Instance.message.text = "加载资源:" + bundlePath;
         StartCoroutine(GetFileBytes(bundlePath,1));
         bundlePath = Path.Combine(Application.streamingAssetsPath, "Data/BulletDefine.txt");
-        UILoadingMessage.Instance.message.text = "加载资源:" + bundlePath;
+        //UILoadingMessage.Instance.message.text = "加载资源:" + bundlePath;
         StartCoroutine(GetFileBytes(bundlePath,2));
-        JumpToNextScene();
+        //JumpToNextScene();
     }
 
     IEnumerator GetFileBytes(string path,int id)
@@ -82,5 +83,4 @@ public class DataManager : MonoSingleton<DataManager>
 	{
         PhotonNetwork.LoadLevel(2);
 	}
-
 }

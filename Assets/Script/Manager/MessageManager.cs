@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
-public class MessageManager : MonoSingleton<MessageManager>
+public class MessageManager : MonoSingleTonPun<MessageManager>
 {
     [Header("最多储存与显示的信息条数")]
 	[SerializeField]
@@ -14,7 +14,6 @@ public class MessageManager : MonoSingleton<MessageManager>
 	{
 		ReceiveNewMessage(messageTypeId,sender,content);
 	}
-
 
 	[PunRPC]
     public void ReceiveNewMessage(int messageTypeId,string sender,string content)

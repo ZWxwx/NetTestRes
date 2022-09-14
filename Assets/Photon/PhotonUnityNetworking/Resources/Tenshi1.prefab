@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7980836324927280514}
   - component: {fileID: 101580518343164799}
-  - component: {fileID: 1464090630565856934}
   m_Layer: 0
   m_Name: EntityInfo
   m_TagString: Untagged
@@ -52,29 +51,6 @@ MonoBehaviour:
   attackPosition: {x: 0, y: 0}
   transformBeforeDefeatedPosition: {x: 0, y: 0, z: 0}
   transformBeforeDefeatedForward: 0
---- !u!114 &1464090630565856934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 593504712412149501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 1
-  ObservedComponents:
-  - {fileID: 101580518343164799}
-  sceneViewId: 0
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!1 &980607695538511150
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,6 +64,8 @@ GameObject:
   - component: {fileID: 980607695538511148}
   - component: {fileID: 6577808436790396615}
   - component: {fileID: 7520314622025677552}
+  - component: {fileID: 8146047645418238445}
+  - component: {fileID: 969556235887805223}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -195,22 +173,22 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 9
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: Idle
   - Type: 9
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: Move
   - Type: 9
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: Attack1
   - Type: 9
     SynchronizeType: 0
     Name: Attack2
   - Type: 9
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: Defeated
   m_SynchronizeLayers:
-  - SynchronizeType: 0
+  - SynchronizeType: 1
     LayerIndex: 0
 --- !u!114 &7520314622025677552
 MonoBehaviour:
@@ -226,6 +204,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisAIEntity: {fileID: 2181386057709031153}
   anim: {fileID: 0}
+--- !u!114 &8146047645418238445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980607695538511150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 6577808436790396615}
+  - {fileID: 969556235887805223}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &969556235887805223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980607695538511150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &2181386057709031157
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,6 +259,7 @@ GameObject:
   - component: {fileID: 7345930595231481495}
   - component: {fileID: 6852957783097888770}
   - component: {fileID: 8660431857984083956}
+  - component: {fileID: 2584505496551117987}
   m_Layer: 10
   m_Name: Tenshi1
   m_TagString: Entity
@@ -354,12 +373,11 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 2
-  OwnershipTransfer: 0
-  observableSearch: 2
+  OwnershipTransfer: 1
+  observableSearch: 0
   ObservedComponents:
   - {fileID: 6852957783097888770}
   - {fileID: 8660431857984083956}
-  - {fileID: 6577808436790396615}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -395,6 +413,29 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 1
   m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 3
+--- !u!114 &2584505496551117987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2181386057709031157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 1
+  OwnershipTransfer: 0
+  observableSearch: 0
+  ObservedComponents:
+  - {fileID: 2181386057709031153}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &1071825059080312112
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -403,10 +444,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 2181386057709031152}
     m_Modifications:
     - target: {fileID: 424109820750810233, guid: 61cdf216ecfc9d646adaee26ac5cb61d, type: 3}
-      propertyPath: entity
-      value: 
-      objectReference: {fileID: 2181386057709031153}
-    - target: {fileID: 702001105227293991, guid: 61cdf216ecfc9d646adaee26ac5cb61d, type: 3}
       propertyPath: entity
       value: 
       objectReference: {fileID: 2181386057709031153}
@@ -422,10 +459,6 @@ PrefabInstance:
       propertyPath: entityInfo
       value: 
       objectReference: {fileID: 101580518343164799}
-    - target: {fileID: 2901998349356069829, guid: 61cdf216ecfc9d646adaee26ac5cb61d, type: 3}
-      propertyPath: m_PresetInfoIsWorld
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2915292755388302494, guid: 61cdf216ecfc9d646adaee26ac5cb61d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

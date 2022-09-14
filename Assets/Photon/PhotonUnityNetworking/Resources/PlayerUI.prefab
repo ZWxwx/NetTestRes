@@ -105,7 +105,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7304629746049434527}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -166,8 +166,6 @@ GameObject:
   - component: {fileID: 6526994304105026023}
   - component: {fileID: 2901998349356069829}
   - component: {fileID: 3036790289956333649}
-  - component: {fileID: 4135914341924859911}
-  - component: {fileID: 1916170583322661092}
   - component: {fileID: 424109820750810233}
   m_Layer: 5
   m_Name: PlayerUI
@@ -183,12 +181,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1940267174820924180}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3873346362282007169}
   - {fileID: 1537629724787329543}
+  - {fileID: 3873346362282007169}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -240,7 +238,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1500
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &3036790289956333649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,45 +256,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &4135914341924859911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1940267174820924180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 2
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents:
-  - {fileID: 1916170583322661092}
-  sceneViewId: 0
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
---- !u!114 &1916170583322661092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1940267174820924180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 0
-  m_SynchronizeRotation: 0
-  m_SynchronizeScale: 1
-  m_UseLocal: 1
 --- !u!114 &424109820750810233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,7 +303,7 @@ RectTransform:
   - {fileID: 3014424929473029472}
   - {fileID: 2038620295430730047}
   m_Father: {fileID: 7304629746049434527}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -414,6 +373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acaf0f43fb0c2c540b23472b54632ca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  originSize: {x: 0, y: 0, z: 0}
   entityInfo: {fileID: 0}
   owner: {fileID: 0}
   barFill: {fileID: 587470458731361385}

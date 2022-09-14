@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,7 +21,7 @@ public class UIPlayerInfo : MonoSingleton<UIPlayerInfo>
 		{
 			healBarFill.value = pc.entityInfo.CurrentHealth / pc.entityInfo.maxHealth;
 			healthText.text = string.Format("{0}/{1}", pc.entityInfo.CurrentHealth.ToString(), pc.entityInfo.maxHealth.ToString());
-			moneyText.text = pc.money.ToString();
+			moneyText.text = PlayerManager.Instance.playerMoneys[PhotonNetwork.LocalPlayer.NickName].ToString();
 		}
 	}
 }

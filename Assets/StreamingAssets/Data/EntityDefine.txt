@@ -19,8 +19,8 @@
     "Name": "琪露诺",
     "Type": "远程",
     "Speed": 0.9,
-    "MaxHealth": 110.0,
-    "Attack": 300.0,
+    "MaxHealth": 300.0,
+    "Attack": 100.0,
     "AttackRange": 8.0,
     "ViewRange": 9.0,
     "AttackPosition": 8040,
@@ -62,7 +62,7 @@
   },
   "105": {
     "ID": 105,
-    "Name": "灵梦防御塔",
+    "Name": "防御塔",
     "Type": "防御塔",
     "Speed": 0.0,
     "MaxHealth": 1200.0,
@@ -74,5 +74,20 @@
     "BulletDataId": 103,
     "DefeatedAnimId": 4,
     "Price": 1500
+  },
+  "106": {
+    "ID": 106,
+    "Name": "小防御塔",
+    "Type": "防御塔",
+    "Speed": 0.0,
+    "MaxHealth": 800.0,
+    "Attack": 70.0,
+    "AttackRange": 8.0,
+    "ViewRange": 15.0,
+    "AttackPosition": 0,
+    "AttackDuring": 1.5,
+    "BulletDataId": 104,
+    "DefeatedAnimId": 5,
+    "Price": 500
   }
 }

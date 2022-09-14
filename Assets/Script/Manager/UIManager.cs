@@ -1,13 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIManager : MonoBehaviour
+public class UIManager : MonoSingleton<UIManager>
 {
     public Canvas mainCanvas;
     public GameObject uiTextPrefab;
 
-    Collider2D mouseHitCollider;
+	public UIPlayerBattleInfo uiPlayerBattleInfo;
+
+	Collider2D mouseHitCollider;
     public Texture2D normalCursor;
     public Texture2D entityCursor;
     void Update()
@@ -31,6 +34,15 @@ public class UIManager : MonoBehaviour
 		{
             Cursor.SetCursor(normalCursor, new Vector2(4f, 4f), CursorMode.Auto);
         }
+
+		if (Input.GetKeyDown(KeyCode.Tab))
+		{
+			UIManager.Instance.Show(uiPlayerBattleInfo);
+		}
+		if (Input.GetKeyUp(KeyCode.Tab))
+		{
+			UIManager.Instance.Close(uiPlayerBattleInfo);
+		}
     }
 
     public void showText(string content)
@@ -49,5 +61,37 @@ public class UIManager : MonoBehaviour
 		{
             Destroy(uiObj);
 		}
+	}
+
+	public void Show(UIResource res)
+	{
+		if (res.obj != null)
+		{
+			res.obj.SetActive(true);
+
+		}
+		else
+		{
+			if (res.prefab == null)
+			{
+				Debug.LogError("UIÎÞÔ¤ÖÆÌå!");
+			}
+			res.obj = Instantiate(res.prefab);
+			res.obj.transform.SetParent(UIManager.Instance.mainCanvas.transform);
+		}
+		
+	}
+
+	public void Close(UIResource res)
+	{
+		if (res.cache)
+		{
+			res.obj.SetActive(false);
+		}
+		else
+		{
+			Destroy(res.obj);
+			
+		}	
 	}
 }
