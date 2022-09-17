@@ -14,5 +14,9 @@ public class AndriodInputManager : MonoSingleton<AndriodInputManager>
 		moveStick.gameObject.SetActive(true);
 		attackButton.gameObject.SetActive(true);
 #endif
+#if UNITY_STANDALONE_WIN
+		moveStick.gameObject.SetActive(false);
+		attackButton.gameObject.SetActive(false);
+#endif
 	}
 }

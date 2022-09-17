@@ -5,43 +5,61 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
+using ExitGames.Client.Photon;
 
-public abstract class EntityController : MonoBehaviourPunCallbacks,IPunObservable
+public abstract class EntityController : MonoBehaviourPunCallbacks, IPunObservable
 {
 	#region Public Fields
 
-	public bool isAI;
-	public float iAttackDuring;
-
 	public EntityController currentTarget;
 
-	public Collider2D[] nearbyCollider;
-	public bool isTargetNearby = false;
-
-	public EntityInfo entityInfo;
-	public EntityDefine entityData;
-
+	public EntityInfo entityInfo=new EntityInfo() { isTargetNearby=false};
+	[Header("当前实体状态")]
 	public AIEntityStatus currentStatus;
 
+	[Header("必要Unity组件")]
 	public Animator animator;
 	public Rigidbody2D rb;
+
+	[Header("必要其他组件")]
 	public UIEntityInfo uIEntityInfo;
-	public HealthBar healthBar;
+	//public HealthBar healthBar;
 	public PhotonView pv;
 
 	public GameObject bodyPrefab;
 
 	public Action<string,float> onHit;
-	[Header("最近一次的攻击者")]
-	public string lastHitterName;
+
+	[Header("仅用于已存在场上的物体而非通过加载的物体")]
+	public int localEntityId=-1;
+	public Team localEntityTeam=Team.None;
+	#endregion
+	GameObject tempObj;
+	#region Protected Fields
+
+	protected Collider2D[] nearbyCollider;
+	protected bool isOnHandleDefeated=false;
+
 	#endregion
 
-	#region Public Fields
-
+	#region Public Methods
+	public virtual void Awake()
+	{
+		if (localEntityId < 0)
+		{
+			enabled = false;
+		}
+		else
+		{
+			enabled = true;
+			SetInitialData(localEntityId, (int)localEntityTeam, DataManager.Instance.Entities[localEntityId].MaxHealth);
+		}
+		
+	}
 	public virtual void Start()
 	{
 		onHit += this.handleOnHit;
-		RefreshEntity();
+		EventManager.EntityDefeated += OnDefeated;
 	}
 
 	[PunRPC]
@@ -51,27 +69,34 @@ public abstract class EntityController : MonoBehaviourPunCallbacks,IPunObservabl
 		{
 			return;
 		}
-		this.entityInfo.entityDataId = entityDataId;
-		this.entityInfo.teamId = teamId;
-		this.entityInfo.CurrentHealth = CurrentHealth;
+		SetInitialData(entityDataId, teamId, CurrentHealth);
 	}
 
 	[PunRPC]
 	public void ReceiveInitialData(int entityDataId, int teamId, float CurrentHealth)
 	{
+		SetInitialData(entityDataId, teamId, CurrentHealth);
+	}
+
+	public void SetInitialData(int entityDataId, int teamId, float CurrentHealth) {
 		this.entityInfo.entityDataId = entityDataId;
 		this.entityInfo.teamId = teamId;
 		this.entityInfo.CurrentHealth = CurrentHealth;
+		animator.runtimeAnimatorController = DataManager.Instance.Animator[DataManager.Instance.Entities[entityInfo.entityDataId].DefeatedAnimId];
+		entityInfo.maxHealth = DataManager.Instance.Entities[entityInfo.entityDataId].MaxHealth;
+		this.enabled = true;
+		uIEntityInfo.refreshInfo();
 	}
 
-	public void SendInitialData(int viewId,string receiver)
+	public void SendInitialData(int entityDataId, int teamId, float CurrentHealth)
 	{
-		photonView.RPC("ReceiveInitialDataByClient", RpcTarget.All ,entityInfo.entityDataId,entityInfo.teamId,entityInfo.CurrentHealth, viewId, receiver);
+		photonView.RPC("ReceiveInitialData", RpcTarget.All, entityDataId,teamId,CurrentHealth);
 	}
+
 
 	public override void OnPlayerEnteredRoom(Player newPlayer)
 	{
-		SendInitialData(photonView.ViewID,newPlayer.NickName);
+		photonView.RPC("ReceiveInitialDataByClient", RpcTarget.All, entityInfo.entityDataId, entityInfo.teamId, entityInfo.CurrentHealth, photonView.ViewID, newPlayer.NickName);
 	}
 
 	public virtual void Update()
@@ -80,15 +105,37 @@ public abstract class EntityController : MonoBehaviourPunCallbacks,IPunObservabl
 		{
 			animator.SetTrigger(currentStatus.ToString());
 		}
+	
 		transform.position = new Vector3(transform.position.x, transform.position.y, 100+ transform.position.y);
+
+		if (entityInfo.CurrentHealth < 0&& !isOnHandleDefeated&&photonView.IsMine)
+		{
+			isOnHandleDefeated = true;
+			RaiseEventManager.Instance.SendEntityDefeatedEvent(
+	entityInfo.isAI ? DataManager.Instance.Entities[entityInfo.entityDataId].Name : photonView.Owner.NickName
+	, photonView.ViewID, entityInfo.entityDataId, entityInfo.teamId, entityInfo.isAI,
+	transform.position, entityInfo.lastHitterName);
+
+			//EventManager.EntityDefeated(entityInfo, owner.entityInfo.lastHitterName);
+		}
 	}
+	//public IEnumerator onSendDefeatedEvent()
+	//{
+	//	while (true)
+	//	{
+			
+			
+	//		yield return new WaitForSeconds(0.5f);
+	//	}
+	//}
+
 	#endregion
 
 	#region Other
 
 	public void handleOnHit(string hitterName,float damage)
 	{
-		this.lastHitterName = hitterName;
+		entityInfo.lastHitterName = hitterName;
 		this.entityInfo.CurrentHealth-=damage;
 	}
 	#region abandoned
@@ -137,15 +184,6 @@ public abstract class EntityController : MonoBehaviourPunCallbacks,IPunObservabl
 		}
 	}
 
-	public void RefreshEntity()
-	{
-		animator.runtimeAnimatorController = DataManager.Instance.Animator[DataManager.Instance.Entities[entityInfo.entityDataId].DefeatedAnimId];
-		entityInfo.maxHealth = DataManager.Instance.Entities[entityInfo.entityDataId].MaxHealth;
-		entityInfo.CurrentHealth = entityInfo.maxHealth;
-		uIEntityInfo.refreshInfo();
-	}
-
-
 
 	#endregion
 
@@ -160,6 +198,32 @@ public abstract class EntityController : MonoBehaviourPunCallbacks,IPunObservabl
 		{
 			entityInfo.CurrentHealth = (float)stream.ReceiveNext();
 		}
+	}
+
+	public void OnDefeated(string victimName,int viewID, int entityID, int teamID, bool isVictimAI, Vector2 position, string murderer)
+	{
+		if (viewID == photonView.ViewID&&((photonView.IsRoomView & PhotonNetwork.IsMasterClient) || photonView.IsMine))
+		{
+
+			tempObj = PhotonNetwork.Instantiate("DefeatedBody", transform.position,Quaternion.identity);
+			tempObj.GetComponent<DefeatedBody>().photonView.RPC("ReceiveInitialData", RpcTarget.All, DataManager.Instance.Entities[entityInfo.entityDataId].DefeatedAnimId,transform.localScale.x);
+
+			if (this.Equals(GameManager.Instance.redTower))
+			{
+				LevelManager.Instance.beginEndBattle(Team.Blue);
+			}
+			else if (this.Equals(GameManager.Instance.blueTower))
+			{
+				LevelManager.Instance.beginEndBattle(Team.Red);
+			}
+			PhotonNetwork.Destroy(this.gameObject);
+		}
+	}
+
+	public override void OnDisable()
+	{
+		base.OnDisable();
+		EventManager.EntityDefeated -= this.OnDefeated;
 	}
 	#endregion
 }

@@ -8,16 +8,20 @@ public class AIEntityController : EntityController
 {
 	[Header("实际射击范围和数据射击范围的误差")]
 	public static float fixedAttackRange=0.5f;
-
 	static float resetNearbyTargetDuring = 0.8f;
+	public bool isTower=false;
 
-	EntityController a;
+
+	public override void Awake()
+	{
+		base.Awake();
+		entityInfo.isAI = true;
+	}
+	
 
 	public override void Start()
 	{
 		base.Start();
-		//healthBar.barFill.GetComponent<Image>().color = team==Team.Blue?Color.blue:Color.red;
-		healthBar.barFill.GetComponent<Image>().color = (Team)entityInfo.teamId == Team.Red ? Color.red : ((Team)entityInfo.teamId == Team.Blue ? Color.blue : Color.grey);
 		rb = GetComponent<Rigidbody2D>();
 		currentStatus = AIEntityStatus.Idle;
 		StartCoroutine(constantlyResetNearbyTarget());
@@ -33,7 +37,7 @@ public class AIEntityController : EntityController
 		#region 查找最近敌方单位，若视野内无敌方单位则目标置空
 
 		
-		nearbyCollider = Physics2D.OverlapCircleAll(transform.position, DataManager.Instance.Entities[entityInfo.entityDataId].ViewRange);
+		nearbyCollider = Physics2D.OverlapCircleAll(transform.position, DataManager.Instance.Entities[entityInfo.entityDataId]!=null? DataManager.Instance.Entities[entityInfo.entityDataId].ViewRange:0f);
 		AIEntityController aec;
 		PlayerController pc;
 
@@ -120,12 +124,13 @@ public class AIEntityController : EntityController
 	public void ResetNearbyTarget()
 	{
 		nearbyCollider = Physics2D.OverlapCircleAll(transform.position, DataManager.Instance.Entities[entityInfo.entityDataId].AttackRange);
-		isTargetNearby = false;
+		entityInfo.isTargetNearby = false;
 		foreach (var collider in nearbyCollider)
 		{
+			EntityController a;
 			if (collider.TryGetComponent<EntityController>(out a) && a == currentTarget)
 			{
-				isTargetNearby = true;
+				entityInfo.isTargetNearby = true;
 			}
 		}
 
@@ -133,15 +138,15 @@ public class AIEntityController : EntityController
 	}
 
 
-	public void Update()
+	public override void Update()
 	{
 		base.Update();
 		if (currentTarget != null) {
 			
-			if (isTargetNearby) {
-				if (iAttackDuring==0) {
+			if (entityInfo.isTargetNearby) {
+				if (entityInfo.iAttackDuring ==0) {
 					currentStatus = AIEntityStatus.Attack1;
-					iAttackDuring = DataManager.Instance.Entities[entityInfo.entityDataId].AttackDuring;
+					entityInfo.iAttackDuring = DataManager.Instance.Entities[entityInfo.entityDataId].AttackDuring;
 				}
 				else
 				{
@@ -174,13 +179,13 @@ public class AIEntityController : EntityController
 			}
 		}
 
-		if (iAttackDuring - Time.deltaTime > 0)
+		if (entityInfo.iAttackDuring - Time.deltaTime > 0)
 		{
-			iAttackDuring -= Time.deltaTime;
+			entityInfo.iAttackDuring -= Time.deltaTime;
 		}
 		else
 		{
-			iAttackDuring = 0;
+			entityInfo.iAttackDuring = 0;
 		}
 
 	}

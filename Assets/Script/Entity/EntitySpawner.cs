@@ -3,26 +3,46 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
-public class EntitySpawner : MonoBehaviour
+public class EntitySpawner : MonoBehaviourPunCallbacks
 {
 	public Team team;
     public Vector2 upLeftPoint;
 	public Vector2 downRightPoint;
 	GameObject temp;
 #if UNITY_EDITOR
-
 	private void OnDrawGizmos()
 	{
 		Gizmos.DrawLine(upLeftPoint, downRightPoint);
 	}
-
 #endif
 
-	public void spawnEntity(int entityID)
+	public EntityController spawnEntity(int entityID)
 	{
-		temp = PhotonNetwork.Instantiate("Tenshi1", new Vector2(Random.Range(upLeftPoint.x, downRightPoint.x), Random.Range(upLeftPoint.y, downRightPoint.y)), Quaternion.identity);
-		temp.GetComponent<AIEntityController>().entityInfo.teamId = (int)team;
-		temp.GetComponent<PhotonView>().RPC("ReceiveInitialData", RpcTarget.All, entityID, (int)team, DataManager.Instance.Entities[entityID].MaxHealth);
+		if (!DataManager.Instance.Entities.ContainsKey(entityID))
+		{
+			Debug.LogError("无法生成ID为" + entityID.ToString() + "的实体，因为其在DataManager中不存在！");
+			return null;
+		}
+		if (PhotonNetwork.IsMasterClient)
+		{
+			temp = PhotonNetwork.InstantiateRoomObject("Tenshi1", new Vector2(Random.Range(upLeftPoint.x, downRightPoint.x), Random.Range(upLeftPoint.y, downRightPoint.y)), Quaternion.identity);
+			temp.GetComponent<EntityController>().SendInitialData(entityID, (int)team, DataManager.Instance.Entities[entityID].MaxHealth);
+			return temp.GetComponent<EntityController>();
+		}
+		return null;
+		
+	}
+
+	public EntityController spawnPlayer(int entityID)
+	{
+		if (!DataManager.Instance.Entities.ContainsKey(entityID))
+		{
+			Debug.LogError("无法生成ID为" + entityID.ToString() + "的实体，因为其在DataManager中不存在！");
+			return null;
+		}
+		temp = PhotonNetwork.Instantiate("Player", new Vector2(Random.Range(upLeftPoint.x, downRightPoint.x), Random.Range(upLeftPoint.y, downRightPoint.y)), Quaternion.identity);
+		temp.GetComponent<EntityController>().SendInitialData(entityID, (int)team, DataManager.Instance.Entities[entityID].MaxHealth);
+		return temp.GetComponent<EntityController>();
 	}
 
 	void Update()
@@ -75,7 +95,5 @@ public class EntitySpawner : MonoBehaviour
 			}
 		}
 		#endregion
-
-
 	}
 }

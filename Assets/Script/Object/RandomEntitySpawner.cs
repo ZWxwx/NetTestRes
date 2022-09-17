@@ -3,13 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RandomEntitySpawner : MonoBehaviourPunCallbacks,IPunObservable
+public class RandomEntitySpawner : EntitySpawner,IPunObservable
 {
 	public List<SpawnerDefine> spawners;
 	Dictionary<int,float> spawnerDic=new Dictionary<int, float>();
-	public Team team;
-	public Vector2 upLeftPoint;
-	public Vector2 downRightPoint;
 	GameObject temp;
 	//生成速率
 	public float speedRate;
@@ -36,6 +33,7 @@ public class RandomEntitySpawner : MonoBehaviourPunCallbacks,IPunObservable
 	{
 		while (true)
 		{
+			
 			yield return new WaitForSeconds(0.1f);
 			if (!PhotonNetwork.IsMasterClient)
 			{
@@ -46,9 +44,7 @@ public class RandomEntitySpawner : MonoBehaviourPunCallbacks,IPunObservable
 			if (spawners[r].spawnValue < spawnerDic[r])
 			{
 				spawnerDic[r] -= spawners[r].spawnValue;
-				temp = PhotonNetwork.InstantiateRoomObject("Tenshi1", new Vector2(Random.Range(upLeftPoint.x, downRightPoint.x), Random.Range(upLeftPoint.y, downRightPoint.y)), Quaternion.identity);
-				temp.GetComponent<AIEntityController>().entityInfo.teamId = (int)team;
-				temp.GetComponent<PhotonView>().RPC("ReceiveInitialData", RpcTarget.All,spawners[r].entityID,(int)team,DataManager.Instance.Entities[spawners[r].entityID].MaxHealth);
+				spawnEntity(spawners[r].entityID);
 			}
 			
 		}

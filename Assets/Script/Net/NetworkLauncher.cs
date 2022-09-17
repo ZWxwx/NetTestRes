@@ -13,6 +13,7 @@ public class NetworkLauncher : MonoBehaviourPunCallbacks
     public InputField roomInput;
     public GameObject roomTip;
     public Text connectingTip;
+    public Text InputTip;
     string gameVersion = "1";
 
     // Start is called before the first frame update
@@ -136,8 +137,27 @@ public class NetworkLauncher : MonoBehaviourPunCallbacks
 
     }
 
-    public void confirmNameButton()
+	public override void OnJoinedLobby()
 	{
+
+        if (!GameTool.ToList(LobbyManager.Instance.onlinePlayerNames).Contains(PhotonNetwork.NickName))
+		{
+            List<string> playerNames = GameTool.ToList(LobbyManager.Instance.onlinePlayerNames);
+            playerNames.Add(PhotonNetwork.NickName);
+            LobbyManager.Instance.onlinePlayerNames = GameTool.ToArray(playerNames);
+
+        }
+
+    }
+
+	public void confirmNameButton()
+	{
+		if (GameTool.ToList(LobbyManager.Instance.onlinePlayerNames).Contains(nameInput.text))
+		{
+            Debug.LogWarning("有人起过这个名字了");
+            InputTip.gameObject.SetActive(true);
+            return;
+		}
         PhotonNetwork.GameVersion = gameVersion;
         PhotonNetwork.NickName = nameInput.text;
         nameUI.SetActive(false);
@@ -178,5 +198,12 @@ public class NetworkLauncher : MonoBehaviourPunCallbacks
         PhotonNetwork.ConnectUsingSettings();
         Debug.LogWarning("重连中");
         StartCoroutine(OnReConnect());
+        if (GameTool.ToList(LobbyManager.Instance.onlinePlayerNames).Contains(PhotonNetwork.NickName))
+        {
+            List<string> playerNames = GameTool.ToList(LobbyManager.Instance.onlinePlayerNames);
+            playerNames.Remove(PhotonNetwork.NickName);
+            LobbyManager.Instance.onlinePlayerNames = GameTool.ToArray(playerNames);
+
+        }
     }
 }

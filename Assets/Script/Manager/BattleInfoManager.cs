@@ -7,14 +7,20 @@ using Photon.Realtime;
 public class BattleInfoManager : MonoSingleTonPun<BattleInfoManager>
 {
 	public Dictionary<string, Vector3> playerBattleInfos = new Dictionary<string, Vector3>();
+
+	private void OnEnable()
+	{
+		base.OnEnable();
+		RaiseEventManager.Instance.SendBattleInfoToNew(PhotonNetwork.LocalPlayer);
+	}
 	protected override void OnStart()
     {
 		playerBattleInfos.Add(PhotonNetwork.NickName, Vector3.zero);
 		EventManager.EntityDefeated += this.releaseDefeatedInfo;
 		EventManager.EntityDefeated += this.refreshPlayerBattleInfo;
-		RoomManager.Instance.OnPlayerEnter += AddPlayerBattleInfos;
-		RoomManager.Instance.OnPlayerLeft += DelectPlayerBattleInfos;
-		RoomManager.Instance.OnPlayerEnter += SendInfoToNew;
+		EventManager.PlayerEnter += AddPlayerBattleInfos;
+		EventManager.PlayerLeft+= DelectPlayerBattleInfos;
+		EventManager.SendBattleInfoToNewReq += SendInfoToNew;
 	}
 
 	void AddPlayerBattleInfos(Player player)
@@ -39,6 +45,10 @@ public class BattleInfoManager : MonoSingleTonPun<BattleInfoManager>
 
 	void SendInfoToNew(Player newPlayer)
 	{
+		if (newPlayer.NickName == PhotonNetwork.NickName)
+		{
+			return;
+		}
 		Vector3 info;
 		if (playerBattleInfos.TryGetValue(PhotonNetwork.NickName, out info)) {
 			photonView.RPC("ReceiveInitialOneBattleInfo", RpcTarget.All, newPlayer.NickName,PhotonNetwork.NickName, info);
@@ -53,22 +63,26 @@ public class BattleInfoManager : MonoSingleTonPun<BattleInfoManager>
 		}
 	}
 
-	
-
-	void releaseDefeatedInfo(EntityController victim,string murdererName)
+	public override void OnJoinedRoom()
 	{
-        if (!victim.isAI)
+		base.OnJoinedRoom();
+	}
+
+
+	void releaseDefeatedInfo(string victimName, int viewID, int entityID, int teamID, bool isVictimAI, Vector2 position, string murdererName)
+	{
+        if (!isVictimAI)
         {
-            UIBattleInfo.Instance.photonView.RPC("setText", Photon.Pun.RpcTarget.All, string.Format("{0}被{1}哔了", victim.photonView.Owner.NickName, murdererName));
+            UIBattleInfo.Instance.photonView.RPC("setText", Photon.Pun.RpcTarget.All, string.Format("{0}被{1}哔了", victimName, murdererName));
         }
 	}
 
-    void refreshPlayerBattleInfo(EntityController victim, string murdererName)
+    void refreshPlayerBattleInfo(string victimName, int viewID, int entityID, int teamID, bool isVictimAI, Vector2 position, string murdererName)
 	{
 		Vector3 battleInfos;
-		if (playerBattleInfos.TryGetValue(murdererName,out battleInfos))
+		if (playerBattleInfos.TryGetValue(murdererName!=null?murdererName:"NullName",out battleInfos))
 		{
-			if (!victim.isAI)
+			if (!isVictimAI)
 			{
 				playerBattleInfos[murdererName] = new Vector3(playerBattleInfos[murdererName].x + 1, playerBattleInfos[murdererName].y, playerBattleInfos[murdererName].z);
 			}
@@ -77,9 +91,24 @@ public class BattleInfoManager : MonoSingleTonPun<BattleInfoManager>
 				playerBattleInfos[murdererName] = new Vector3(playerBattleInfos[murdererName].x, playerBattleInfos[murdererName].y, playerBattleInfos[murdererName].z + 1);
 			}
 		}
-		if (!victim.isAI)
+		if (!isVictimAI)
 		{
-			playerBattleInfos[victim.photonView.Owner.NickName] = new Vector3(playerBattleInfos[victim.photonView.Owner.NickName].x, playerBattleInfos[victim.photonView.Owner.NickName].y + 1, playerBattleInfos[victim.photonView.Owner.NickName].z);
+			playerBattleInfos[victimName] = new Vector3(playerBattleInfos[victimName].x, playerBattleInfos[victimName].y + 1, playerBattleInfos[victimName].z);
+		}
+		foreach(var kv in playerBattleInfos)
+		{
+			bool flag=false;
+			foreach(var player in PhotonNetwork.PlayerList)
+			{
+				if (player.NickName.Equals(kv.Key))
+				{
+					flag = true;
+				}
+			}
+			if (!flag)
+			{
+				playerBattleInfos.Remove(kv.Key);
+			}
 		}
 	}
 

@@ -12,7 +12,7 @@ public class UIDuringAttack : MonoBehaviour
     {
         
         transform.position = Input.mousePosition+(Vector3)offset;
-        if(PlayerManager.Instance.currentPlayer!=null&& PlayerManager.Instance.currentPlayer.iAttackDuring > 0)
+        if(PlayerManager.Instance.currentPlayer!=null&& PlayerManager.Instance.currentPlayer.entityInfo.iAttackDuring > 0)
 		{
             EntityDefine ed;
             if(!DataManager.Instance.Entities.TryGetValue(PlayerManager.Instance.currentPlayer.entityInfo.entityDataId, out ed))
@@ -20,7 +20,7 @@ public class UIDuringAttack : MonoBehaviour
                 return;
 			}
             
-            GetComponentInChildren<Slider>().value = PlayerManager.Instance.currentPlayer.iAttackDuring / ed.AttackDuring;
+            GetComponentInChildren<Slider>().value = PlayerManager.Instance.currentPlayer.entityInfo.iAttackDuring / ed.AttackDuring;
 
         }
 		else

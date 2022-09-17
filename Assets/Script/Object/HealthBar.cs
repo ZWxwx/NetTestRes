@@ -4,18 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
-public class HealthBar : MonoBehaviourPunCallbacks
+public class HealthBar : MonoBehaviour
 {
+	public bool onRefresh=true;
 	public Vector3 originSize;
-	public EntityInfo entityInfo;
-	public EntityController owner;
+	public EntityController entity;
 	public GameObject barFill;
-
-
 	public void SetHealthBarColor()
 	{
-		barFill.GetComponent<Image>().color = (Team)entityInfo.teamId == Team.Red ? Color.red : ((Team)entityInfo.teamId == Team.Blue ? Color.blue : Color.grey);
-		
+		barFill.GetComponent<Image>().color = (Team)entity.entityInfo.teamId == Team.Red ? Color.red : ((Team)entity.entityInfo.teamId == Team.Blue ? Color.blue : Color.grey);
 	}
 
 	public void Start()
@@ -23,14 +20,17 @@ public class HealthBar : MonoBehaviourPunCallbacks
 		originSize = transform.localScale;
 	}
 
+	public void RefreshHealth()
+	{
+		transform.localScale = new Vector3(originSize.x * Mathf.Log((1 + entity.entityInfo.maxHealth / 250f)), originSize.y * Mathf.Log((1 + entity.entityInfo.maxHealth / 250f)), originSize.z);
+		GetComponent<Slider>().value = (entity.entityInfo.CurrentHealth / entity.entityInfo.maxHealth) < 0 ? 0f : (entity.entityInfo.CurrentHealth / entity.entityInfo.maxHealth) > 1 ? 1f : entity.entityInfo.CurrentHealth / entity.entityInfo.maxHealth;
+	}
 	public void Update()
 	{
-		transform.localScale = new Vector3(originSize.x * Mathf.Log((1 + entityInfo.maxHealth / 250f)), originSize.y * Mathf.Log((1 + entityInfo.maxHealth / 250f)), originSize.z);
-		GetComponent<Slider>().value = (entityInfo.CurrentHealth / entityInfo.maxHealth) < 0 ? 0f: (entityInfo.CurrentHealth / entityInfo.maxHealth) >1?1f: entityInfo.CurrentHealth / entityInfo.maxHealth;
-		SetHealthBarColor();
-		if (entityInfo.CurrentHealth < 0)
+		if (onRefresh&&entity.enabled)
 		{
-			EventManager.EntityDefeated(owner, owner.lastHitterName);
+			RefreshHealth();
+			SetHealthBarColor();
 		}
 	}
 }

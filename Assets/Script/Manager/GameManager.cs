@@ -57,12 +57,11 @@ public class GameManager : MonoSingleton<GameManager>
 		{
             return;
 		}
-            player = PhotonNetwork.Instantiate("Player", new Vector2(
-                Random.Range(esp.upLeftPoint.x, esp.downRightPoint.x)
-                , Random.Range(esp.upLeftPoint.y, esp.downRightPoint.y)), Quaternion.identity, 0);
-        player.GetComponent<PhotonView>().RPC("ReceiveInitialData", RpcTarget.All, 102,(int)selectedTeam,DataManager.Instance.Entities[102].MaxHealth);
+        player=esp.spawnPlayer(102).gameObject;
+        //player.GetComponent<PhotonView>().RPC("ReceiveInitialData", RpcTarget.All, 102,(int)selectedTeam,DataManager.Instance.Entities[102].MaxHealth);
         currentCharacter = player;
         respawnButton.GetComponent<Button>().interactable = false;
+        //player.GetComponent<PlayerController>().entityInfo.entityDataId = 102;
         UIPlayerInfo.Instance.setPlayer(player.GetComponent<PlayerController>());
         PlayerManager.Instance.currentPlayer = player.GetComponent<PlayerController>();
     }

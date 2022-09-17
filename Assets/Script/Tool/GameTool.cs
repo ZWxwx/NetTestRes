@@ -35,4 +35,29 @@ public class GameTool : MonoBehaviour
 	}
 #endif
 
+	public static List<string> ToList(string[] strings)
+	{
+		List<string> list = new List<string>();
+		foreach (string st in strings)
+		{
+			list.Add(st);
+		}
+		return list;
+	}
+
+	public static string[] ToArray(List<string> list)
+	{
+		string[] strs = new string[20];
+		int i = 0;
+		foreach (string st in list)
+		{
+			strs[i] = st;
+			i++;
+		}
+		return strs;
+	}
+	public void exitGame()
+	{
+		Application.Quit();
+	}
 }

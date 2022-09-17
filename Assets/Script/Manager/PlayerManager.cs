@@ -10,11 +10,16 @@ public class PlayerManager : MonoSingleTonPun<PlayerManager> {
 	const int initialMoney= 100;
 	public Dictionary<string, int> playerMoneys = new Dictionary<string, int>();
 	public PlayerController currentPlayer;
-	public PhotonView photonView;
 	public float autoMoneySpeed=7f;
 
 	public GameObject killedMoney;
 
+	public void Update()
+	{
+		if (currentPlayer == null&&!GameManager.Instance.chosingBoard.activeInHierarchy) {
+			GameManager.Instance.ResetRespawnButton(PhotonNetwork.NickName);
+		}
+	}
 	public void AddPlayerMoneyKV(Player player)
 	{
 		if (!playerMoneys.ContainsKey(player.NickName))
@@ -32,11 +37,10 @@ public class PlayerManager : MonoSingleTonPun<PlayerManager> {
 
 	protected override void OnStart()
 	{
-		photonView = GetComponent<PhotonView>();
 		EventManager.EntityDefeated += getKilledMoney;
 		EventManager.EntityDefeated += ShowKilledMoneyUI;
-		RoomManager.Instance.OnPlayerEnter += AddPlayerMoneyKV;
-		RoomManager.Instance.OnPlayerLeft += DelectPlayerMoneyKV;
+		EventManager.PlayerEnter += AddPlayerMoneyKV;
+		EventManager.PlayerLeft += DelectPlayerMoneyKV;
 		playerMoneys.Add(PhotonNetwork.NickName, initialMoney);
 		StartCoroutine(autoMoney());
 	}
@@ -82,13 +86,13 @@ public class PlayerManager : MonoSingleTonPun<PlayerManager> {
 		}
 	}
 
-	public void getKilledMoney(EntityController victim, string name)
+	public void getKilledMoney(string victimName, int viewID, int entityID, int teamID, bool isVictimAI, Vector2 position, string name)
 	{
 		if (name != PhotonNetwork.NickName)
 		{
 			return;
 		}
-		playerMoneys[name] += DataManager.Instance.Entities[victim.entityInfo.entityDataId].Price / 4;
+		playerMoneys[name] += DataManager.Instance.Entities[entityID].Price / 4;
 		//photonView.RPC("getKilledMoneyPun", RpcTarget.All, DataManager.Instance.Entities[victim.entityInfo.entityDataId].Price / 4, name);
 	}
 
@@ -101,7 +105,7 @@ public class PlayerManager : MonoSingleTonPun<PlayerManager> {
 	//	}
 	//}
 
-	private void ShowKilledMoneyUI(EntityController victim, string murderName)
+	private void ShowKilledMoneyUI(string victimName, int viewID, int entityID, int teamID, bool isVictimAI, Vector2 position, string murderName)
 	{
 		if (murderName != PhotonNetwork.NickName)
 		{
@@ -109,9 +113,9 @@ public class PlayerManager : MonoSingleTonPun<PlayerManager> {
 		}
 
 		float value;
-		if (victim.isAI) {
+		if (isVictimAI) {
 			EntityDefine ed;
-			DataManager.Instance.Entities.TryGetValue(victim.entityInfo.entityDataId, out ed);
+			DataManager.Instance.Entities.TryGetValue(entityID, out ed);
 			value = ed.Price/4;
 		}
 		else
@@ -119,7 +123,7 @@ public class PlayerManager : MonoSingleTonPun<PlayerManager> {
 			value = 150f;
 		}
 
-		var km = Instantiate(killedMoney, new Vector2(victim.transform.position.x, victim.transform.position.y), Quaternion.identity);
+		var km = Instantiate(killedMoney,position, Quaternion.identity);
 		km.GetComponentInChildren<Text>().text = "+" + value.ToString();
 		
 	}

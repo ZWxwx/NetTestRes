@@ -16,9 +16,10 @@ public class DefeatedBody : MonoBehaviourPunCallbacks,IPunObservable
 	}
 
 	[PunRPC]
-	public void ReceiveInitialData(int DefeatedAnimId)
+	public void ReceiveInitialData(int DefeatedAnimId,float xToward)
 	{
 		this.DefeatedAnimId = DefeatedAnimId;
+		transform.localScale = new Vector3(xToward,transform.localScale.y,transform.localScale.z);
 	}
 
 	public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)

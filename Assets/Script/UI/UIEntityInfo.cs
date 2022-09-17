@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class UIEntityInfo : MonoBehaviour
 {
-    public EntityController entity;
+	public EntityController entity;
     public Text nameText;
 
 	private void Start()
@@ -20,7 +20,7 @@ public class UIEntityInfo : MonoBehaviour
 
 	public void refreshInfo()
 	{
-		if (entity&&entity.isAI)
+		if (entity&&entity.entityInfo.isAI)
 		{
 			nameText.text = DataManager.Instance.Entities[entity.entityInfo.entityDataId].Name;
 		}

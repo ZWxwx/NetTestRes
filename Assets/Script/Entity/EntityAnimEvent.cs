@@ -7,10 +7,10 @@ public class EntityAnimEvent : MonoBehaviour
 	public AIEntityController thisAIEntity;
 	//public EntityController thisEntity;
 	Collider2D[] nearbyCollider;
-	EntityController a;
+
 
 	#region temp
-
+	EntityController a;
 	AIEntityController aec;
 	PlayerController pc;
 

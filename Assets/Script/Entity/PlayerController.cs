@@ -23,6 +23,12 @@ public class PlayerController : EntityController
 	#region Public Methods
 	#endregion
 
+	public override void Awake()
+	{
+		base.Awake();
+        entityInfo.isAI = false;
+    }
+
 	public override void Start()
     {
         base.Start();
@@ -34,7 +40,7 @@ public class PlayerController : EntityController
     }
     public IEnumerator shotOneBullet(Transform target,float time)
 	{
-        iAttackDuring = DataManager.Instance.Entities[entityInfo.entityDataId].AttackDuring;
+        entityInfo.iAttackDuring = DataManager.Instance.Entities[entityInfo.entityDataId].AttackDuring;
         currentStatus = AIEntityStatus.Attack1;
         yield return new WaitForSeconds(time);
 		if (target == null)
@@ -60,7 +66,7 @@ public class PlayerController : EntityController
 /// </summary>
     public void shotOneBulletToNearestTarget()
     {
-		if (iAttackDuring > 0)
+		if (entityInfo.iAttackDuring > 0)
 		{
             return;
 		}
@@ -151,8 +157,8 @@ public class PlayerController : EntityController
 
 		#region Target Control
 
-#if UNITY_UNITY_STANDALONE_WIN
-		if (Input.GetButtonDown("Fire1")&&iAttackDuring==0)
+#if UNITY_STANDALONE_WIN
+		if (Input.GetButtonDown("Fire1")&&entityInfo.iAttackDuring==0)
 		{
             Collider2D targetCol=null;
 			nearbyCollider = Physics2D.OverlapPointAll(Camera.main.ScreenToWorldPoint(Input.mousePosition));
@@ -187,13 +193,13 @@ public class PlayerController : EntityController
 #endregion
 
 		#region 运转供给冷却
-		if (iAttackDuring - Time.deltaTime > 0)
+		if (entityInfo.iAttackDuring - Time.deltaTime > 0)
         {
-            iAttackDuring -= Time.deltaTime;
+            entityInfo.iAttackDuring -= Time.deltaTime;
         }
         else
         {
-            iAttackDuring = 0;
+            entityInfo.iAttackDuring = 0;
         }
 #endregion
 

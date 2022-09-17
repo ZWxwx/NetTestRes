@@ -8,8 +8,10 @@ using System;
 
 public class RoomManager : MonoSingleTonPun<RoomManager>
 {
-	public Action<Player> OnPlayerEnter;
-	public Action<Player> OnPlayerLeft;
+	public void Awake()
+	{
+		PhotonNetwork.AutomaticallySyncScene = true; 
+	}
 	private void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Escape))
@@ -21,16 +23,13 @@ public class RoomManager : MonoSingleTonPun<RoomManager>
 		{
 			playerList += player.NickName;
 		}
-		Debug.Log(playerList);
+		//Debug.Log(playerList);
 	}
 
 	public override void OnPlayerEnteredRoom(Player newPlayer)
 	{
 		base.OnPlayerEnteredRoom(newPlayer);
-		if (OnPlayerEnter != null)
-		{
-			OnPlayerEnter(newPlayer);
-		}
+		RaiseEventManager.Instance.SendPlayerEnterEvent(newPlayer);
 
 
 		//PlayerManager.Instance.photonView.RPC("ReceiveInitialData", RpcTarget.All, newPlayer.NickName);
@@ -41,16 +40,14 @@ public class RoomManager : MonoSingleTonPun<RoomManager>
 
 	public void LeaveRoom()
 	{
+		
 		PhotonNetwork.LeaveRoom();
 		
 	}
 	public override void OnPlayerLeftRoom(Player otherPlayer)
 	{
 		base.OnPlayerLeftRoom(otherPlayer);
-		if (OnPlayerLeft != null)
-		{
-			OnPlayerLeft(otherPlayer);
-		}
+		RaiseEventManager.Instance.SendPlayerLeftEvent(otherPlayer);
 	}
 	public override void OnLeftRoom()
 	{
